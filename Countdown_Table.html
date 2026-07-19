@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+<style>
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#16233a;
+    font-family:'Segoe UI', Arial, sans-serif;
+    padding:20px;
+  }
+  .box{
+    background:#fff;
+    width:100%;
+    max-width:400px;
+    border-radius:16px;
+    padding:30px 28px;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+  }
+  h1{
+    font-family:Georgia, 'Times New Roman', serif;
+    color:#16233a;
+    text-align:center;
+    font-size:1.4rem;
+    margin:0 0 10px;
+  }
+  p.note{ color:#666; font-size:.85rem; text-align:center; margin-bottom:20px; }
+  button{
+    display:block;
+    margin:0 auto;
+    padding:12px 26px;
+    border:none;
+    border-radius:10px;
+    background:#16233a;
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s;
+  }
+  button:hover{ background:#c08a28; }
+  .output{
+    margin-top:22px;
+    padding:16px 18px;
+    background:#fbf6ea;
+    border:1px dashed #c08a28;
+    border-radius:8px;
+    font-family:'Consolas','Courier New', monospace;
+    font-size:1.05rem;
+    white-space:pre-wrap;
+    text-align:center;
+    min-height:1.2em;
+  }
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Countdown (While Loop)</h1>
+    <p class="note">Counts down from 10 to 1 using a while loop, then displays "Happy Coding!".</p>
+    <button onclick="startCountdown()">Start Countdown</button>
+    <div class="output" id="output">Result will appear here…</div>
+  </div>
+
+<script>
+function startCountdown(){
+  let result = "";
+  let i = 10;
+  while (i >= 1){
+    result += i + "\n";
+    i--;
+  }
+  result += "Happy Coding!";
+  document.getElementById('output').textContent = result;
+}
+</script>
+
+</body>
+</html>
