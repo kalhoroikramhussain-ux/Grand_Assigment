@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Even or Odd</title>
+<style>
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#16233a;
+    font-family:'Segoe UI', Arial, sans-serif;
+    padding:20px;
+  }
+  .box{
+    background:#fff;
+    width:100%;
+    max-width:440px;
+    border-radius:16px;
+    padding:30px 28px;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+  }
+  h1{
+    font-family:Georgia, 'Times New Roman', serif;
+    color:#16233a;
+    text-align:center;
+    font-size:1.4rem;
+    margin:0 0 10px;
+  }
+  p.note{ color:#666; font-size:.85rem; text-align:center; margin-bottom:20px; }
+  button{
+    display:block;
+    margin:0 auto;
+    padding:12px 26px;
+    border:none;
+    border-radius:10px;
+    background:#16233a;
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s;
+  }
+  button:hover{ background:#c08a28; }
+  .output{
+    margin-top:22px;
+    padding:16px 18px;
+    background:#fbf6ea;
+    border:1px dashed #c08a28;
+    border-radius:8px;
+    font-family:'Consolas','Courier New', monospace;
+    font-size:.92rem;
+    white-space:pre-wrap;
+    min-height:1.2em;
+  }
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Even or Odd (For Loop)</h1>
+    <p class="note">Enter 5 numbers one by one. Each will be checked for Even or Odd.</p>
+    <button onclick="checkEvenOdd()">Enter 5 Numbers</button>
+    <div class="output" id="output">Result will appear here…</div>
+  </div>
+
+<script>
+function checkEvenOdd(){
+  let result = "";
+  for (let i = 1; i <= 5; i++){
+    const num = Number(prompt("Enter number " + i + ":"));
+    if (num % 2 === 0){
+      result += "Number " + i + " (" + num + ") -> Even\n";
+    } else {
+      result += "Number " + i + " (" + num + ") -> Odd\n";
+    }
+  }
+  document.getElementById('output').textContent = result;
+}
+</script>
+
+</body>
+</html>
